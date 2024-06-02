@@ -1,7 +1,6 @@
 <?php
 include 'Connect.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,10 +26,11 @@ include 'Connect.php';
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="btn btn-outline-primary" href="AddData.php">Add User</a>
+
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="btn btn-outline-warning" href="TrueListItem.php">Style</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">

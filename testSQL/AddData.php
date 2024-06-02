@@ -10,7 +10,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>Đăng ký tài khoản</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -34,16 +34,10 @@
                     <h2 class="title">Đăng ký tài khoản</h2>
                     <form action="AddUser.php" method="POST">
                         <div class="row row-space">
-                            <div class="col-2">
+                            <div class="col-4">
                                 <div class="input-group">
-                                    <label class="label">first name</label>
-                                    <input class="input--style-4" type="text" name="firstname">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">last name</label>
-                                    <input class="input--style-4" type="text" name="lastname">
+                                    <label class="label">Full name</label>
+                                    <input class="input--style-4" type="text" name="fullname">
                                 </div>
                             </div>
                         </div>
@@ -80,9 +74,9 @@
         </div>
     </div>
 
-    <!-- Jquery JS-->
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</body>
 
 </html>
 <!-- end document-->
