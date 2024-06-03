@@ -72,7 +72,7 @@ include 'DeleteUser.php';
                                 echo '<td>' . $row['username'] . '</td>';
                                 echo '<td>' . $row['password'] . '</td>';
                                 echo '<td>' . $row['mail'] . '</td>';
-                                echo '<td><img src="' . $row['avatar'] . '" alt="" width="100px" height="100px"></td>';
+                                echo '<td><img src= "http://localhost/phptest/testSQL/' . $row['avatar'] . '" alt="" width="100px" height="100px"></td>';
                                 echo '<td><a href="UpdateData.php?id=' . $row['id'] . '" class="btn btn-outline-warning">Update</a>
 									<a href="TrueListItem.php?id=' . $row['id'] . '" class="btn btn-outline-danger">Delete</a></td>';
                                 echo '</tr>';

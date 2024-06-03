@@ -32,7 +32,7 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Đăng ký tài khoản</h2>
-                    <form action="AddUser.php" method="POST">
+                    <form action="AddUser.php" method="POST" enctype="multipart/form-data">
                         <div class="row row-space">
                             <div class="col-4">
                                 <div class="input-group">
@@ -63,6 +63,14 @@
                                     <label class="label">Password</label>
                                     <input class="input--style-4" type="password" name="password">
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-4">
+                                <fieldset class="form-group">
+                                    <label for="exampleInputFile">Avatar</label>
+                                    <input name="fileToUpload" type="file" class="form-control-file" id="exampleInputFile">
+                                </fieldset>
                             </div>
                         </div>
                         <div class="p-t-15">

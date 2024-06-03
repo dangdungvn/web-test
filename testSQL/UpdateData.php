@@ -42,7 +42,7 @@ include 'Connect.php';
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                     ?>
-                            <form action="UpdateUser.php" method="POST">
+                            <form action="UpdateUser.php" method="POST" enctype="multipart/form-data">
                                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                                 <div class="row row-space">
                                     <div class="col-4">
@@ -74,6 +74,17 @@ include 'Connect.php';
                                             <label class="label">Password</label>
                                             <input class="input--style-4" type="password" name="password" value="<?php echo $row['password']; ?>">
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row row-space">
+                                    <div class="col-4">
+                                        <fieldset class="form-group">
+                                            <input id="" class="form-control" type="hidden" name="anhcu" value="<?php echo $row['avatar']; ?>">
+                                            <label for="exampleInputFile">Avatar</label>
+                                            <input name="fileToUpload" type="file" class="form-control-file" id="exampleInputFile">
+                                            <img src=" http://localhost/phptest/testSQL/<?php echo $row['avatar']; ?>" width="
+                                        100px" height="100px" alt="">
+                                        </fieldset>
                                     </div>
                                 </div>
                                 <div class="p-t-15">
