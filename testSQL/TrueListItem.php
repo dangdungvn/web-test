@@ -22,6 +22,7 @@ include 'DeleteUser.php';
         <div class="row">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#">Danh sách dữ liệu</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,14 +32,19 @@ include 'DeleteUser.php';
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
                                     <a class="btn btn-outline-primary" href="AddData.php">Add User</a>
+                                </li>
                                 <li class="nav-item">
-
                                     <a class="btn btn-outline-warning" href="ListItem.php">Style</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="btn btn-outline-warning" href="signup.php">Đăng Xuất</a>
                                 </li>
                             </ul>
                             <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search" name="search">
-                                <button class="btn btn-outline-success" type="submit" id="btnSearch">Search</button>
+                                <form action="TrueListItem.php" method="POST">
+                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search" name="search">
+                                    <button class="btn btn-outline-success" type="submit" name="btn_search">Search</button>
+                                </form>
                             </form>
                         </div>
                     </div>
@@ -61,8 +67,14 @@ include 'DeleteUser.php';
                     <tbody>
 
                         <?php
+                        if (isset($_POST['btn_search'])) {
+                            $input = $_POST['search'];
+                        } else {
+                            echo $input = false;
+                        }
                         $sql = "SELECT * FROM `tung`";
-                        $result = $conn->query($sql);
+                        $sqlSearch = "SELECT * FROM `tung` WHERE `fullname` LIKE '%$input%'";
+                        $result = $conn->query($sqlSearch);
                         if ($result->num_rows > 0) {
                             // output data of each row
                             while ($row = $result->fetch_assoc()) {
@@ -87,7 +99,7 @@ include 'DeleteUser.php';
             </div><!-- Hết col-12 -->
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $("#search").keyup(function() {
@@ -108,7 +120,7 @@ include 'DeleteUser.php';
                 }
             });
         });
-    </script>
+    </script> -->
 </body>
 
 </html>
