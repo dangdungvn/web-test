@@ -37,9 +37,8 @@ include 'DeleteUser.php';
                                 </li>
                             </ul>
                             <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search" name="search">
+                                <button class="btn btn-outline-success" type="submit" id="btnSearch">Search</button>
                             </form>
                         </div>
                     </div>
@@ -60,10 +59,10 @@ include 'DeleteUser.php';
                         <th>Action</th>
                     </thead>
                     <tbody>
+
                         <?php
                         $sql = "SELECT * FROM `tung`";
                         $result = $conn->query($sql);
-
                         if ($result->num_rows > 0) {
                             // output data of each row
                             while ($row = $result->fetch_assoc()) {
@@ -82,14 +81,34 @@ include 'DeleteUser.php';
                         }
                         $conn->close();
                         ?>
+                        <div id="result"></div>
                     </tbody>
                 </table>
-
             </div><!-- Hết col-12 -->
-
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#search").keyup(function() {
+                var input = $(this).val();
+                if (input != "") {
+                    $.ajax({
+                        url: 'Search.php',
+                        method: 'POST',
+                        data: {
+                            input: input
+                        },
+                        success: function(data) {
+                            $("#result").html(data);
+                        }
+                    });
+                } else {
+                    $("#result").css("display", "none");
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -49,7 +49,7 @@ include 'Connect.php';
                 while ($row = $result->fetch_assoc()) {
                     echo '<div class="col-lg-3 col-md-4 col-sm-6">';
                     echo '<div class="card" style="width: 18rem;">';
-                    echo '<img src="' . $row['avatar'] . '" class="card-img-top" alt="...">';
+                    echo '<img src="' . $row['avatar'] . '" class="card-img-top" style="width: 285px; height: 300px;" alt="...">';
                     echo '<div class="card-body">';
                     echo '<h5 class="card-title">' . $row['fullname'] . '</h5>';
                     echo '<p class="card-text">' . $row['username'] . '</p>';
