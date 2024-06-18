@@ -24,7 +24,6 @@ if (isset($_SESSION['useradmin']) && isset($_SESSION['passadmin'])) {
             <div class="row">
                 <div class="col-md-12">
                     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-
                         <div class="container-fluid">
                             <a class="navbar-brand" href="#">Danh sách dữ liệu</a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,9 +58,9 @@ if (isset($_SESSION['useradmin']) && isset($_SESSION['passadmin'])) {
                 <div class="col-md-12">
                     <table class="table table-hover table-inverse">
                         <thead>
+                            <th>Fullname</th>
                             <th>Username</th>
                             <th>Password</th>
-                            <th>Fullname</th>
                             <th>Email</th>
                             <th>Avatar</th>
                             <th>Action</th>
@@ -74,8 +73,7 @@ if (isset($_SESSION['useradmin']) && isset($_SESSION['passadmin'])) {
                             } else {
                                 echo $input = false;
                             }
-                            $sql = "SELECT * FROM `tung`";
-                            $sqlSearch = "SELECT * FROM `tung` WHERE `fullname` LIKE '%$input%'";
+                            $sqlSearch = "SELECT * FROM tung WHERE fullname LIKE '%$input%'";
                             $result = $conn->query($sqlSearch);
                             if ($result->num_rows > 0) {
                                 // output data of each row
